@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Owl - Innovative Digital Marketing & SEO Solutions</title>
+    <meta name="description" content="Horizon Owl offers cutting-edge digital marketing and SEO strategies to propel your business to new heights in the digital era. Led by expert Martin Nahuel Lucena.">
+    <meta name="keywords" content="digital marketing, SEO, social media, PPC advertising, web design, data analysis, Martin Nahuel Lucena">
+    <meta name="author" content="Martin Nahuel Lucena">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.horizonowl.com/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.horizonowl.com/">
+    <meta property="og:title" content="Horizon Owl - Innovative Digital Marketing & SEO Solutions">
+    <meta property="og:description" content="Propel your business to new heights with our cutting-edge digital marketing and SEO strategies. Led by expert Martin Nahuel Lucena.">
+    <meta property="og:image" content="https://www.horizonowl.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.horizonowl.com/">
+    <meta property="twitter:title" content="Horizon Owl - Innovative Digital Marketing & SEO Solutions">
+    <meta property="twitter:description" content="Propel your business to new heights with our cutting-edge digital marketing and SEO strategies. Led by expert Martin Nahuel Lucena.">
+    <meta property="twitter:image" content="https://www.horizonowl.com/images/twitter-image.jpg">
+
+    <!-- Schema.org markup for Google+ -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Horizon Owl",
+      "url": "https://www.horizonowl.com",
+      "logo": "https://www.horizonowl.com/images/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Martin Nahuel Lucena"
+      },
+      "sameAs": [
+        "https://www.facebook.com/horizonowl",
+        "https://twitter.com/horizonowl",
+        "https://www.linkedin.com/company/horizonowl",
+        "https://www.instagram.com/horizonowl"
+      ]
+    }
+    </script>
+
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-gradient-animated {
+            background: linear-gradient(-45deg, #001f3f, #0077be, #00a8e8, #00c9ff);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00a8e8;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #001f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .preloader-content {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #00a8e8;
+            border-top: 3px solid #00c9ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 31, 63, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            z-index: 1000;
+        }
+        .bottom-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .bottom-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .message-slider {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .message-slider-content {
+            display: inline-block;
+            animation: slide 15s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .filter-active {
+            background-color: #00a8e8;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gradient-animated text-white">
+    <div id="custom-cursor"></div>
+    <div class="preloader">
+        <div class="preloader-content"></div>
+    </div>
+
+    <!-- Top Banner -->
+    <div id="top-banner" class="bg-sky-600 p-4 text-center fixed w-full z-50">
+        <div class="message-slider">
+            <div class="message-slider-content">
+                <span class="inline-block px-4">Special Offer! 20% off all SEO services this month</span>
+                <span class="inline-block px-4">New AI-powered SEO solutions available</span>
+                <span class="inline-block px-4">Join our webinar: SEO Trends 2024</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-40 transition-all duration-300 bg-transparent" style="top: 56px;">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <div class="flex items-center space-x-2">
+                <img src="https://via.placeholder.com/50" alt="Horizon Owl Logo" class="h-10 w-10">
+                <span class="text-xl font-bold">Horizon Owl</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-sky-400 transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-sky-400 transition-colors">Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-sky-400 transition-colors">Portfolio</a></li>
+                    <li><a href="#clients" class="hover:text-sky-400 transition-colors">Clients</a></li>
+                    <li><a href="#seo" class="hover:text-sky-400 transition-colors">SEO</a></li>
+                    <li><a href="#blog" class="hover:text-sky-400 transition-colors">Blog</a></li>
+                    <li><a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a></li>
+                </ul>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </nav>
+            <button class="hidden md:inline-flex px-4 py-2 bg-transparent border border-sky-400 text-sky-400 rounded-md hover:bg-sky-400 hover:text-white transition-colors">
+                Contact Us
+            </button>
+            <button id="menuToggle" class="md:hidden text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-navy-900 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex flex-col items-center justify-center h-full">
+            <a href="#home" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Home</a>
+            <a href="#services" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Services</a>
+            <a href="#portfolio" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Portfolio</a>
+            <a href="#clients" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Clients</a>
+            <a href="#seo" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">SEO</a>
+            <a href="#blog" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Blog</a>
+            <a href="#contact" class="text-2xl font-bold py-4 hover:text-sky-400 transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+        <div id="heroSlider" class="absolute inset-0 transition-opacity duration-1000">
+            <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/1920x1080/?digital,marketing')] bg-cover bg-center bg-no-repeat opacity-30"></div>
+            <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/1920x1080/?seo,technology')] bg-cover bg-center bg-no-repeat opacity-0"></div>
+            <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/1920x1080/?social,media')] bg-cover bg-center bg-no-repeat opacity-0"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight fade-in-up">
+                Propel Your Brand with <span class="text-sky-400">SEO Excellence</span>
+            </h1>
+            <p class="mb-8 text-lg sm:text-xl text-sky-200 max-w-3xl mx-auto fade-in-up">
+                Innovative and personalized SEO strategies to take your business to the top of search results in the digital era.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in-up">
+                <button class="px-8 py-3 bg-sky-600 text-white rounded-md hover:bg-sky-700 transition-colors hover-scale">
+                    Discover Our SEO Magic
+                </button>
+                <button class="px-8 py-3 bg-transparent border border-sky-400 text-sky-400 rounded-md hover:bg-sky-400 hover:text-white transition-colors hover-scale">
+                    View Our SEO Case Studies
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-4xl text-sky-400"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Our <span class="text-sky-400">Innovative</span> SEO Services
+            </h2>
+            <div class="grid gap-8 md:grid-cols-2  lg:grid-cols-3">
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-search text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">On-Page SEO</h3>
+                    <p class="text-sky-200">Optimize your website's content and structure for maximum search engine visibility.</p>
+                </div>
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-link text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">Link Building</h3>
+                    <p class="text-sky-200">Develop a strong backlink profile to boost your website's authority and rankings.</p>
+                </div>
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-chart-line text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">Technical SEO</h3>
+                    <p class="text-sky-200">Improve your website's backend structure for better crawling and indexing.</p>
+                </div>
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-globe text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">Local SEO</h3>
+                    <p class="text-sky-200">Boost your visibility in local search results and attract nearby customers.</p>
+                </div>
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-pencil-alt text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">Content Strategy</h3>
+                    <p class="text-sky-200">Develop a content plan that attracts, engages, and converts your target audience.</p>
+                </div>
+                <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 hover:border-sky-300 transition-colors fade-in-up hover-scale">
+                    <i class="fas fa-tachometer-alt text-4xl text-sky-400 mb-4"></i>
+                    <h3 class="mb-2 text-xl font-semibold">SEO Audits</h3>
+                    <p class="text-sky-200">Comprehensive analysis of your website to identify and fix SEO issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-navy-900">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Our SEO <span class="text-sky-400">Success Stories</span>
+            </h2>
+            <div class="mb-8 flex justify-center space-x-4">
+                <button class="px-4 py-2 rounded-md bg-navy-700 hover:bg-sky-600 transition-colors filter-btn filter-active" data-filter="all">All</button>
+                <button class="px-4 py-2 rounded-md bg-navy-700 hover:bg-sky-600 transition-colors filter-btn" data-filter="local">Local SEO</button>
+                <button class="px-4 py-2 rounded-md bg-navy-700 hover:bg-sky-600 transition-colors filter-btn" data-filter="ecommerce">E-commerce SEO</button>
+                <button class="px-4 py-2 rounded-md bg-navy-700 hover:bg-sky-600 transition-colors filter-btn" data-filter="content">Content SEO</button>
+            </div>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="portfolio-grid">
+                <div class="bg-navy-800 rounded-lg overflow-hidden group portfolio-item" data-category="local">
+                    <img src="https://source.unsplash.com/random/800x600/?local,business" alt="Local SEO Project" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Local Cafe SEO Boost</h3>
+                        <p class="text-sky-200">Increased local search visibility by 200% for a neighborhood cafe.</p>
+                    </div>
+                </div>
+                <div class="bg-navy-800 rounded-lg overflow-hidden group portfolio-item" data-category="ecommerce">
+                    <img src="https://source.unsplash.com/random/800x600/?ecommerce,shop" alt="E-commerce SEO Project" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Online Store Rankings Surge</h3>
+                        <p class="text-sky-200">Boosted organic traffic by 150% for an e-commerce clothing store.</p>
+                    </div>
+                </div>
+                <div class="bg-navy-800 rounded-lg overflow-hidden group portfolio-item" data-category="content">
+                    <img src="https://source.unsplash.com/random/800x600/?content,writing" alt="Content SEO Project" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Blog Traffic Explosion</h3>
+                        <p class="text-sky-200">Increased blog readership by 300% through strategic content optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Clients Who <span class="text-sky-400">Trust</span> Our SEO Expertise
+            </h2>
+            <div class="overflow-hidden">
+                <div id="clientSlider" class="flex transition-transform duration-300 ease-in-out">
+                    <div class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 px-4">
+                        <img src="https://via.placeholder.com/150?text=Client+1" alt="Client 1" class="h-16 w-auto mx-auto filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 px-4">
+                        <img src="https://via.placeholder.com/150?text=Client+2" alt="Client 2" class="h-16 w-auto mx-auto filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 px-4">
+                        <img src="https://via.placeholder.com/150?text=Client+3" alt="Client 3" class="h-16 w-auto mx-auto filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 px-4">
+                        <img src="https://via.placeholder.com/150?text=Client+4" alt="Client 4" class="h-16 w-auto mx-auto filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 px-4">
+                        <img src="https://via.placeholder.com/150?text=Client+5" alt="Client 5" class="h-16 w-auto mx-auto filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Expert Section -->
+    <section id="seo" class="py-20 bg-navy-900">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Meet Our SEO <span class="text-sky-400">Expert</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-full md:w-1/3 fade-in-up">
+                    <img src="https://via.placeholder.com/400x400?text=Martin+Nahuel+Lucena" alt="Martin Nahuel Lucena" class="rounded-full w-64 h-64 mx-auto object-cover shadow-lg">
+                </div>
+                <div class="w-full md:w-2/3 fade-in-up">
+                    <h3 class="text-2xl font-bold mb-4">Martin Nahuel Lucena</h3>
+                    <p class="text-sky-200 mb-6">
+                        Martin Nahuel Lucena is the founder and lead SEO strategist at Horizon Owl. With over a decade of experience in digital marketing and SEO, Martin has helped numerous businesses achieve top rankings and drive organic growth. His innovative approach combines cutting-edge techniques with data-driven insights to deliver exceptional results for our clients.
+                    </p>
+                    <ul class="list-disc list-inside text-sky-200 mb-6">
+                        <li>Google Analytics and Google Ads Certified</li>
+                        <li>Speaker at major SEO conferences</li>
+                        <li>Published author on SEO best practices</li>
+                        <li>Developed proprietary SEO tools used by industry professionals</li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-sky-400 hover:text-white transition-colors">
+                            <i class="fas fa-globe text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Our SEO <span class="text-sky-400">Impact</span> in Numbers
+            </h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="text-center fade-in-up">
+                    <div class="text-4xl font-bold text-sky-400 mb-2">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <p class="text-xl">Websites Optimized</p>
+                </div>
+                <div class="text-center fade-in-up">
+                    <div class="text-4xl font-bold text-sky-400 mb-2">
+                        <span class="counter" data-target="10000">0</span>+
+                    </div>
+                    <p class="text-xl">Keywords Ranked</p>
+                </div>
+                <div class="text-center fade-in-up">
+                    <div class="text-4xl font-bold text-sky-400 mb-2">
+                        <span class="counter" data-target="5">0</span>M+
+                    </div>
+                    <p class="text-xl">Organic Visits Generated</p>
+                </div>
+                <div class="text-center fade-in-up">
+                    <div class="text-4xl font-bold text-sky-400 mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <p class="text-xl">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Graph Section -->
+    <section class="py-20 bg-navy-900">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Our SEO Performance <span class="text-sky-400">Growth</span>
+            </h2>
+            <div class="w-full max-w-4xl mx-auto">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                What Our <span class="text-sky-400">Clients</span> Say About Our SEO
+            </h2>
+            <div id="testimonialSlider" class="overflow-hidden">
+                <div class="flex transition-transform duration-300 ease-in-out">
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 fade-in-up">
+                            <i class="fas fa-star text-2xl text-sky-400 mb-4"></i>
+                            <p class="text-lg mb-4">"Horizon Owl's SEO strategies completely transformed our online presence. Our organic traffic has increased by 200% in just 6 months!"</p>
+                            <p class="font-semibold">Maria Gonzalez</p>
+                            <p class="text-sky-400">CEO, TechStart</p>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 fade-in-up">
+                            <i class="fas fa-star text-2xl text-sky-400 mb-4"></i>
+                            <p class="text-lg mb-4">"Their innovative approach to local SEO helped us dominate the search results in our area. We're now the go-to choice for local customers."</p>
+                            <p class="font-semibold">Carlos Rodriguez</p>
+                            <p class="text-sky-400">Owner, Rodriguez Plumbing</p>
+                        </div>
+                    </div>
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-navy-700 rounded-lg p-6 border border-sky-400 fade-in-up">
+                            <i class="fas fa-star text-2xl text-sky-400 mb-4"></i>
+                            <p class="text-lg mb-4">"Thanks to Horizon Owl's content strategy, our blog is now ranking for hundreds of keywords. Our organic reach has never been better!"</p>
+                            <p class="font-semibold">Ana Martinez</p>
+                            <p class="text-sky-400">Content Manager, HealthHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-navy-900">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Latest <span class="text-sky-400">SEO Insights</span>
+            </h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-navy-700 rounded-lg overflow-hidden fade-in-up hover-scale">
+                    <img src="https://source.unsplash.com/random/800x600/?seo,analytics" alt="The Future of SEO in 2024" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sky-400 mb-2">SEO Trends</p>
+                        <h3 class="text-xl font-semibold mb-4">The Future of SEO in 2024</h3>
+                        <button class="text-sky-400 flex items-center">
+                            Read More 
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-navy-700 rounded-lg overflow-hidden fade-in-up hover-scale">
+                    <img src="https://source.unsplash.com/random/800x600/?content,strategy" alt="Content Strategy for SEO" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sky-400 mb-2">Content SEO</p>
+                        <h3 class="text-xl font-semibold mb-4">Content Strategy for SEO Success</h3>
+                        <button class="text-sky-400 flex items-center">
+                            Read More 
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-navy-700 rounded-lg overflow-hidden fade-in-up hover-scale">
+                    <img src="https://source.unsplash.com/random/800x600/?artificial,intelligence" alt="AI in SEO" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sky-400 mb-2">Technology</p>
+                        <h3 class="text-xl font-semibold mb-4">How AI is Revolutionizing SEO</h3>
+                        <button class="text-sky-400 flex items-center">
+                            Read More 
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-3xl sm:text-4xl font-bold fade-in-up">
+                Frequently Asked <span class="text-sky-400">SEO Questions</span>
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6 fade-in-up">
+                    <h3 class="text-xl font-semibold mb-2">What makes Horizon Owl's SEO approach different?</h3>
+                    <p class="text-sky-200">We combine cutting-edge technology with personalized strategies tailored to each client's unique needs. Our data-driven approach and continuous adaptation to search engine algorithms ensure sustainable, long-term results.</p>
+                </div>
+                <div class="mb-6 fade-in-up">
+                    <h3 class="text-xl font-semibold mb-2">How long does it take to see results from SEO efforts?</h3>
+                    <p class="text-sky-200">SEO is a long-term strategy, but you can typically start seeing initial improvements within 3-6 months. Significant, sustainable results are usually evident after 6-12 months of consistent effort and optimization.</p>
+                </div>
+                <div class="mb-6 fade-in-up">
+                    <h3 class="text-xl font-semibold mb-2">Do you offer SEO services for different industries?</h3>
+                    <p class="text-sky-200">Yes, we have experience working with a wide range of industries. Our team crafts tailored SEO strategies that align with your specific industry, target audience, and business goals.</p>
+                </div>
+                <div class="mb-6 fade-in-up">
+                    <h3 class="text-xl font-semibold mb-2">How do you measure the success of your SEO campaigns?</h3>
+                    <p class="text-sky-200">We use a combination of advanced analytics tools and custom KPIs to track and measure the success of our SEO campaigns. This includes monitoring organic traffic growth, keyword rankings, conversion rates, and ROI. We provide regular, transparent reporting to keep you informed about your SEO performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-20 bg-sky-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://source.unsplash.com/random/1920x1080/?pattern')] bg-repeat"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="mb-4 text-3xl font-bold fade-in-up">Ready to Skyrocket Your Search Rankings?</h2>
+            <p class="mb-8 text-xl fade-in-up">Discover how our SEO expertise can propel your business to the top of search results.</p>
+            <button class="px-8 py-3 bg-white text-sky-600 rounded-md hover:bg-sky-100 transition-colors fade-in-up hover-scale">
+                Get Your Free SEO Audit
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <img src="https://via.placeholder.com/150?text=Horizon+Owl" alt="Horizon Owl Logo" class="h-12 w-auto mb-4">
+                    <p class="text-sky-200">Propelling your company's digital success with innovative SEO strategies and measurable results.</p>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-lg font-semibold">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-sky-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-sky-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="text-sky-200 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#clients" class="text-sky-200 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="#seo" class="text-sky-200 hover:text-white transition-colors">SEO</a></li>
+                        <li><a href="#blog" class="text-sky-200 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-sky-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-lg font-semibold">Contact</h3>
+                    <p class="text-sky-200">info@horizonowl.com</p>
+                    <p class="text-sky-200">+1 (555) 123-4567</p>
+                    <p class="text-sky-200">123 SEO Street<br>San Francisco, CA 94105</p>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-lg font-semibold">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-sky-200 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-sky-200 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-sky-200 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-sky-200 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-navy-700 pt-8 text-center">
+                <p class="text-sm text-sky-200">&copy; 2024 Horizon Owl. All rights reserved.</p>
+                <p class="text-sm text-sky-400 mt-2">SEO Excellence by Martin Nahuel Lucena</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="fixed bottom-20 right-4 bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 transition-colors z-50" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Bottom Menu -->
+    <nav class="bottom-menu">
+        <a href="#home"><i class="fas fa-home"></i></a>
+        <a href="#services"><i class="fas fa-cogs"></i></a>
+        <a href="#portfolio"><i class="fas fa-briefcase"></i></a>
+        <a href="#clients"><i class="fas fa-users"></i></a>
+        <a href="#seo"><i class="fas fa-search"></i></a>
+    </nav>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Fade-in effect
+        const fadeInElements = document.querySelectorAll('.fade-in-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-0');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const topBanner = document.getElementById('top-banner');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-navy-900/80', 'backdrop-blur-lg');
+                header.style.top = '0';
+                topBanner.style.transform = 'translateY(-100%)';
+            } else {
+                header.classList.remove('bg-navy-900/80', 'backdrop-blur-lg');
+                header.style.top = '56px';
+                topBanner.style.transform = 'translateY(0)';
+            }
+        });
+
+        // Portfolio filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+                button.classList.add('filter-active');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const increment = target / speed;
+
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Organic Traffic Growth',
+                    data: [1000, 1500, 2200, 3000, 3800, 5000],
+                    borderColor: 'rgb(0, 168, 232)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Monthly Organic Visits'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Visits: ${context.parsed.y}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Custom cursor
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+        });
+
+        // Hero slider
+        const heroSlider = document.getElementById('heroSlider');
+        const heroSlides = heroSlider.children;
+        let currentHeroSlide = 0;
+
+        function updateHeroSlider() {
+            for (let i = 0; i < heroSlides.length; i++) {
+                heroSlides[i].style.opacity = i === currentHeroSlide ? '1' : '0';
+            }
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+        }
+
+        setInterval(updateHeroSlider, 5000);
+    </script>
+</body>
+</html>
